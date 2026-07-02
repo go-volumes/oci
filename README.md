@@ -1,4 +1,8 @@
-# go-volumes/oci
+# oci
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/go-volumes/oci.svg)](https://pkg.go.dev/github.com/go-volumes/oci)
+[![License: BSD-3-Clause](https://img.shields.io/badge/license-BSD--3--Clause-blue)](LICENSE)
+[![CI](https://github.com/go-volumes/oci/actions/workflows/ci.yml/badge.svg)](https://github.com/go-volumes/oci/actions/workflows/ci.yml)
 
 Freeze a block-volume image into an immutable, content-addressed **OCI artifact**
 (push to a registry) and re-open it as a read-only block backing (pull from a
