@@ -23,7 +23,8 @@ immutable backing.
   `net/http`: monolithic blob upload, HEAD-based dedup, manifest get/put, and
   anonymous / HTTP Basic / Docker–OCI bearer-token auth. sha256 digests; every
   pulled blob is verified.
-- **`oci`** (root) — `Freeze` and `OpenReadOnly`.
+- **`oci`** (root) — `Freeze`, `OpenReadOnly`, and `Overlay` (a writable layer
+  over a frozen image).
 
 ## Use
 
@@ -36,6 +37,31 @@ mfDigest, err := oci.Freeze(ctx, src /* volume.ReadOnly */, client, "myimage:v1"
 img, err := oci.OpenReadOnly(ctx, client, "myimage:v1")
 p, err := pool.OpenWith(img) // img is volume.ReadOnly AND pool.Backing
 ```
+
+## Writable overlay
+
+`OpenReadOnly` gives an immutable `*Image`; `NewOverlay` wraps it in a
+read-write layer that buffers writes in memory (the base is never mutated)
+and merges them over base reads. `pool.OpenWith(overlay)` therefore yields a
+fully read-write pool over a frozen, content-addressed base — including the
+pool's own metadata writes, which the overlay absorbs like any other write.
+
+```go
+img, err := oci.OpenReadOnly(ctx, client, "myimage:v1")
+ov := oci.NewOverlay(img)
+p, err := pool.OpenWith(ov)
+
+// ... mutate through p ...
+
+// Snapshot only the changed chunks into a new, versioned artifact; unchanged
+// chunks are reused by digest from the base — no re-pull, no re-push.
+newDigest, err := ov.Commit(ctx, client, "myimage:v2")
+```
+
+`Overlay.Sync` is a no-op — durability is the explicit `Overlay.Commit`, which
+pushes blobs only for the chunks that changed since the base and returns the
+new manifest digest. Reopen the new tag with `OpenReadOnly` to branch another
+overlay from it.
 
 ## Artifact shape
 
