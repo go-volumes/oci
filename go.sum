@@ -10,3 +10,5 @@ github.com/go-volumes/pool v0.0.0-20260830080205-d225a13a183d h1:U65f4P3d4F4eEJK
 github.com/go-volumes/pool v0.0.0-20260830080205-d225a13a183d/go.mod h1:ehOHqpkJXqQPf8vblSe1nJR2rbkH0dPQh+fn812Fu40=
 github.com/go-volumes/pool v0.0.0-20260831132413-2e6ed7d8a22d h1:soigbqrEaQc7b/5mMbId0MlMg4Zu7hte4weCbYSZ2lc=
 github.com/go-volumes/pool v0.0.0-20260831132413-2e6ed7d8a22d/go.mod h1:Ile1uaPthN/5wqmck1pKKU8q97bGqqDRg6bzTsr00o0=
+github.com/go-volumes/pool v0.0.0-20260901145335-eba8d16381ce h1:wAmuBx1Q44S6cH5futOPd6sVw9/w1j1oAsHHNBacys8=
+github.com/go-volumes/pool v0.0.0-20260901145335-eba8d16381ce/go.mod h1:b2sW6RPgN/k5Ux8LqA/aE7bWXs8Co1Pk4j1GIDfRzS0=
