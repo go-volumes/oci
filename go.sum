@@ -1,4 +1,4 @@
 github.com/go-volumes/interface v0.0.0-20261005012011-927a08191bcf h1:zDR04uoHyEEMb9Z2sQTAKyzqPfKLrP1DiLF9/7CVIV0=
 github.com/go-volumes/interface v0.0.0-20261005012011-927a08191bcf/go.mod h1:lwltlACDHlD2o8lLqrCKTU4AeSGJYxu5jQiyeYUSnG0=
-github.com/go-volumes/pool v0.0.0-20261005012023-af6c54f34462 h1:XJjVcxcqkb+5CRQVb9dke352pCXAbeQw+769Uvo9MJ0=
-github.com/go-volumes/pool v0.0.0-20261005012023-af6c54f34462/go.mod h1:Rv5LsKunEPs1VmVWVSYMZmZi/HmVDB3IKjOM8rDNka8=
+github.com/go-volumes/pool v0.0.0-20261006065538-a52f8736b638 h1:+S1I02kyiLVOyhHB8Zx30lqJphoKKanUqX7a6M8+Sog=
+github.com/go-volumes/pool v0.0.0-20261006065538-a52f8736b638/go.mod h1:t6IonRPLufJ5jIfCrpxWfyA8JGKzgimjxqOkm7JJqDk=
